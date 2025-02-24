@@ -1,4 +1,4 @@
-const API_KEY = "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";
+const API_KEY = "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";
 const API_URL = 'https://openrouter.ai/api/v1/chat/completions'
 
 let headers = {
@@ -19,7 +19,8 @@ let data = {
 }
 fetch(API_URL,data)
 .then((response)=>response.json()).then((result)=>{
-    console.log(result)
+    console.log(result.choices[0].message);
+    let messages = result.messages
 }).catch((err)=>{
     console.log(err)
 })
